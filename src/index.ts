@@ -1,5 +1,3 @@
-import '@testing-library/jest-dom'
-
 // render, screen
 export * from './react'
 

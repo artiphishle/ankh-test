@@ -1,6 +1,6 @@
 {
   "name": "ankh-test",
-  "version": "0.1.18",
+  "version": "0.1.19",
   "type": "module",
   "exports": {
     ".": {
@@ -21,8 +21,10 @@
     "prepublishOnly": "pnpm build"
   },
   "dependencies": {
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.3.0"
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/react": "^16.3.0",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2"
   },
   "devDependencies": {
     "@types/jsdom": "^21.1.7",
