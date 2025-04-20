@@ -27,7 +27,8 @@ Examples:
 
 const vitestBin = path.resolve(__dirname, '../node_modules/.bin/vitest')
 const userDefinedConfig = args.find(arg => arg === '--config')
-const defaultConfigPath = path.resolve(__dirname, '../vitest.config.ts')
+const defaultConfigPath = path.resolve(__dirname, './vitest-config.js')
+
 
 const command = [
   vitestBin,
