@@ -1,4 +1,4 @@
-# 🧪 Ankhorage Test
+# Ankhorage Test
 
 ![npm version](https://img.shields.io/npm/v/ankh-test?color=blue)
 ![types](https://img.shields.io/npm/types/ankh-test)
@@ -10,7 +10,7 @@ Includes a Vitest-powered CLI (`ankh-test`) and a typed test utility module read
 
 ---
 
-## 🚀 Features
+## Features
 
 - ✅ Unified test CLI: `ankh-test`, powered by [Vitest](https://vitest.dev)
 - ✅ Built-in support for `jsdom`, `@testing-library/react`, `assert.strict`
@@ -19,7 +19,7 @@ Includes a Vitest-powered CLI (`ankh-test`) and a typed test utility module read
 
 ---
 
-## 📦 Installation
+## Installation
 
 Install locally into any project:
 
@@ -28,14 +28,15 @@ pnpm add -D ankh-test
 
 ---
 
-## ✨ Getting Started
+## Getting Started
 
 Create a test file like `Button.test.tsx`:
 
 ```tsx
 import { describe, it, render, screen, assert } from 'ankh-test'
+import type { PropsWithChildren } from 'react'
 
-const Button = ({ children }: { children: React.ReactNode }) => (
+const Button = ({ children }: { children: PropsWithChildren }) => (
   <button>{children}</button>
 )
 
