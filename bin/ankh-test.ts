@@ -5,25 +5,35 @@ import { fileURLToPath } from 'url'
 import { dirname } from 'path'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
+
 const args = process.argv.slice(2)
 const isCI = process.env.CI === 'true' || args.includes('--ci')
-const filteredArgs = args.filter(arg => arg !== '--ci')
+const isHelp = args.includes('--help') || args.includes('-h')
+const filteredArgs = args.filter(arg => arg !== '--ci' && arg !== '--help' && arg !== '-h')
 
-if (args.includes('--help')) {
+if (isHelp) {
   console.log(`
 Usage:
-  ankh-test [--ci] [files...]
+  ankh-test [--ci] [--config <file>] [test/glob patterns]
 
 Examples:
-  ankh-test                    # Watch mode
-  ankh-test --ci               # Run once with coverage (CI mode)
-  ankh-test src/utils         # Target a specific path
+  ankh-test                  # Watch mode (default)
+  ankh-test --ci             # Run once with coverage
+  ankh-test src/utils        # Target specific files or folders
+  ankh-test --help           # Show this help message
 `)
   process.exit(0)
 }
 
-// Resolve the vitest binary within this package
 const vitestBin = path.resolve(__dirname, '../node_modules/.bin/vitest')
-const command = `${vitestBin} ${isCI ? 'run --coverage' : 'watch'} ${filteredArgs.join(' ')}`
+const userDefinedConfig = args.find(arg => arg === '--config')
+const defaultConfigPath = path.resolve(__dirname, '../vitest.config.ts')
+
+const command = [
+  vitestBin,
+  isCI ? 'run --coverage' : 'watch',
+  ...(userDefinedConfig ? [] : ['--config', defaultConfigPath]),
+  ...filteredArgs
+].join(' ')
 
 execSync(command, { stdio: 'inherit' })
