@@ -12,7 +12,8 @@ export default defineConfig([
     format: ['esm'],
     outDir: 'dist',
     clean: false,
-    dts: true
+    dts: true,
+    external: ['chalk', 'supports-color', 'os']
   },
   {
     entry: { 'vitest-config': 'src/vitest-config.ts' },
