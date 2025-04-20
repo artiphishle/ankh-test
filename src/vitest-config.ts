@@ -5,6 +5,7 @@ export default defineConfig({
   plugins: [tsconfigPaths()],
   test: {
     environment: 'node',
-    setupFiles: ['./dist/vitest-setup.js']
+    setupFiles: ['ankh-test/dist/vitest-setup.js']
+
   }
 })
