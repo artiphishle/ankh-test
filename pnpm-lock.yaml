@@ -23,6 +23,9 @@ importers:
       '@types/react-dom':
         specifier: ^19.1.2
         version: 19.1.2(@types/react@19.1.2)
+      expect:
+        specifier: ^29.7.0
+        version: 29.7.0
     devDependencies:
       '@types/jsdom':
         specifier: ^21.1.7
@@ -30,9 +33,6 @@ importers:
       '@types/node':
         specifier: ^22.14.1
         version: 22.14.1
-      expect:
-        specifier: ^29.7.0
-        version: 29.7.0
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
