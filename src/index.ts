@@ -1,5 +1,3 @@
-export * from './dom'
-
 // render, screen
 export * from './react'
 
