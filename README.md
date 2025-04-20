@@ -25,3 +25,23 @@ Install locally into any project:
 
 ```bash
 pnpm add -D ankh-test
+
+---
+
+## ✨ Getting Started
+
+Create a test file like `Button.test.tsx`:
+
+```tsx
+import { describe, it, render, screen, assert } from 'ankh-test'
+
+const Button = ({ children }: { children: React.ReactNode }) => (
+  <button>{children}</button>
+)
+
+describe('Button', () => {
+  it('renders text', () => {
+    render(<Button>Hello</Button>)
+    assert.equal(screen.getByText('Hello').tagName, 'BUTTON')
+  })
+})
