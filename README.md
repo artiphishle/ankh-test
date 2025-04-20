@@ -1,32 +1,27 @@
-# Ankhorage Testing
+# 🧪 Ankhorage Test
 
-The all-in-one toolbox for testing modern apps.
+![npm version](https://img.shields.io/npm/v/ankh-test?color=blue)
+![types](https://img.shields.io/npm/types/ankh-test)
+![license](https://img.shields.io/npm/l/ankh-test)
+![build](https://img.shields.io/badge/built%20with-tsup-3178c6?logo=typescript)
 
-## Purpose
+**A native-feeling test toolbox & CLI** for React component testing — minimal, fast, and expressive.  
+Includes a Vitest-powered CLI (`ankh-test`) and a typed test utility module ready to use across your projects.
 
-I like my projects clean, for testing purposes I want to install one package, to keep the package.json transparent.
+---
 
-## What's in the box?
+## 🚀 Features
 
-The package provides:
+- ✅ Unified test CLI: `ankh-test`, powered by [Vitest](https://vitest.dev)
+- ✅ Built-in support for `jsdom`, `@testing-library/react`, `assert.strict`
+- ✅ Fully typed API, no global setup needed
+- ✅ Ideal for component/unit testing in React, with native-like experience
 
-- Node.js internal testing functionality introduced in v18
-- Component testing from `@testing-library`
+---
 
-## Usage
+## 📦 Installation
 
-```typescript
-import type { PropsWithChildren } from 'react'
-import { describe, it, render, screen, assert } from 'ankh-testing'
+Install locally into any project:
 
-const Button = ({ children }: { children: PropsWithChildren }) => (
-  <button>{children}</button>
-)
-
-describe('Button', () => {
-  it('renders with text', () => {
-    render(<Button>Hello</Button>)
-    assert.equal(screen.getByText('Hello').tagName, 'BUTTON')
-  })
-})
-```
+```bash
+pnpm add -D ankh-test
