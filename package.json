@@ -1,6 +1,6 @@
 {
   "name": "ankh-test",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "type": "module",
   "bin": {
     "ankh-test": "./dist/ankh-test.js"
@@ -12,7 +12,8 @@
     }
   },
   "files": [
-    "dist/"
+    "dist/",
+    "src/vitest-setup.ts"
   ],
   "types": "./dist/index.d.ts",
   "engines": {
