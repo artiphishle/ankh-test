@@ -19,5 +19,11 @@ export default defineConfig([
     format: ['esm'],
     outDir: 'dist',
     clean: false
+  },
+  {
+    entry: { 'vitest-setup': 'src/vitest-setup.ts' },
+    format: ['esm'],
+    outDir: 'dist',
+    clean: false
   }
 ])
