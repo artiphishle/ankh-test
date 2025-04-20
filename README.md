@@ -8,8 +8,6 @@
 **A native-feeling test toolbox & CLI** for React component testing — minimal, fast, and expressive.  
 Includes a Vitest-powered CLI (`ankh-test`) and a typed test utility module ready to use across your projects.
 
----
-
 ## Features
 
 - ✅ Unified test CLI: `ankh-test`, powered by [Vitest](https://vitest.dev)
@@ -17,32 +15,23 @@ Includes a Vitest-powered CLI (`ankh-test`) and a typed test utility module read
 - ✅ Fully typed API, no global setup needed
 - ✅ Ideal for component/unit testing in React, with native-like experience
 
----
-
 ## Installation
 
 Install locally into any project:
 
 ```bash
 pnpm add -D ankh-test
+```
 
----
-
-## Getting Started
-
-Create a test file like `Button.test.tsx`:
+## Usage
 
 ```tsx
 import { describe, it, render, screen, assert } from 'ankh-test'
-import type { PropsWithChildren } from 'react'
 
-const Button = ({ children }: { children: PropsWithChildren }) => (
-  <button>{children}</button>
-)
-
-describe('Button', () => {
-  it('renders text', () => {
-    render(<Button>Hello</Button>)
-    assert.equal(screen.getByText('Hello').tagName, 'BUTTON')
+describe('Example', () => {
+  it('works', () => {
+    render(<h1>Hello</h1>)
+    expect(screen.getByText('Hello')).toBeInTheDocument()
   })
 })
+```
