@@ -1,6 +1,6 @@
 {
   "name": "ankh-test",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "type": "module",
   "bin": {
     "ankh-test": "./dist/ankh-test.js"
